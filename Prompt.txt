@@ -1,0 +1,49 @@
+You are an expert Python developer, data scientist, and UI/UX designer. Build a Streamlit application  Agentic Campaign Optimization Engine in Marketing domain
+
+The goal of this app is to demonstrate how AI agents can autonomously analyze marketing data, identify bad performance, rewrite ad copy, and reallocate budgets. Since this is for a workshop, the app needs to be highly interactive, visually polished, and include educational markdown text explaining what the "Agent" is doing at each step.
+
+Please build this project step-by-step with the following requirements:
+
+### 1. Project Structure & Setup
+Create a modular structure. I expect at least:
+
+
+### 2. Dummy Data Generation 
+Write a function to generate a realistic pandas DataFrame containing at least 500 rows of marketing data. 
+- **Columns needed:** Campaign ID, Platform (Meta, Google, LinkedIn), Audience Segment (e.g., "Tech Bros 25-34", "Soccer Moms"), Ad Creative Name, Spend ($), Impressions, Clicks, Conversions.
+- Calculate derived metrics: CTR (Click-Through Rate), CPA (Cost Per Acquisition), and ROAS (Return on Ad Spend).
+- *Crucial:* 1. Intentionally skew the data so that 2-3 specific segments have terrible performance (very high CPA, low CTR) so the agent has something obvious to fix.
+  2. export to excel sheet
+
+### 3. The Streamlit Interface 
+Build a modern Streamlit UI with a sidebar containing four main pages/tabs:
+
+**Page 1: Campaign Dashboard**
+- Render interactive Plotly charts showing Spend vs Conversions, and CPA by Platform.
+- Add workshop markdown explaining that this is the data the agent is monitoring.
+
+**Page 2: Anomaly Detection (Identifying Underperformers)**
+- Create a data table that automatically filters and highlights "Underperforming Segments" (e.g., CPA > $50 or CTR < 0.5%).
+- Use Streamlit metrics or stylized containers to draw attention to the worst offenders.
+
+**Page 3: Agentic Creative Optimization**
+- Allow the user to select one of the underperforming segments from a dropdown.
+- Add a "Run AI Agent" button with a spinner/progress bar to simulate thinking.
+- When clicked, simulate an LLM response that outputs:
+  1. A brief analysis of *why* the current creative is failing based on the audience.
+  2. 3 brand new, highly targeted ad copy variants (Headlines & Primary Text) designed to fix the issue.
+
+**Page 4: Budget Reallocation Engine**
+- Show a side-by-side comparison: "Current Budget Allocation" vs "Agent Recommended Allocation".
+- The logic should shift 20% of the budget away from the underperformers and distribute it to the top 3 performing segments.
+- Show a projected increase in overall Conversions based on this move.
+
+### 4. Vibe & Styling
+- Use Streamlit's native layout features (columns, expanders, metric cards).
+-  Ensure all charts are visually cohesive and easy to read.
+
+### 5. Constraints
+- Code should be properly commented
+- create readme.md file
+
+Please start by creating the project structure, generating the dummy data script, and setting up the basic Streamlit shell. Once you finish the first step, we will iterate and refine it. Let's make it look amazing!
